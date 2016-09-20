@@ -7,6 +7,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/BearDb')
 
 
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -69,10 +70,10 @@ router.route('/bears')
     });
 });
 
-router.route('/bears/:bear_id')
+router.route('/bears/:id')
 
 .get(function (req, res) {
-    Bear.findById(req.params.bear_id, function (err, bear) {
+    Bear.findById(req.params.id, function (err, bear) {
         if (err)
             res.send(err);
         res.json(bear);
@@ -81,7 +82,7 @@ router.route('/bears/:bear_id')
 
 .put(function (req, res) {
 
-    Bear.findById(req.params.bear_id, function (err, bear) {
+    Bear.findById(req.params.id, function (err, bear) {
         if (err)
             res.send(err);
 
@@ -99,14 +100,15 @@ router.route('/bears/:bear_id')
 })
 
 .delete(function(req, res) {
-    Bear.remove({
-        _id: req.params.bear_id
-    }, function(err, bear) {
-        if (err) 
-            res.send(err);
-        res.json({ message: `Successfully deleted` });
-    });
-});
+        _id = req.params.id;
+        console.log(_id)
+        Bear.remove({_id: _id}, function(err, doc) {
+            res.json(doc);
+            
+        })
+    } 
+    );
+
 
 
 

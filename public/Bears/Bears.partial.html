@@ -4,12 +4,12 @@
   <thead>
     <th>Name</th>
     <th>age</th>
-    <th>ID</th>
+      <th>ID</th>
     <th>Remove</th>
   </thead>
   <tbody>
     <tr ng-repeat="bear in BearsCtrl.bears">
-      <td>{{ bear.name }}</td>
+     <td> <a ng-href="/api/bears/{{bear._id}}">{{ bear.name }}</a></td>
       <td>{{ bear.age }}</td>
       <td>{{ bear._id }} </td>
       <td><button type="button" class="btn btn-default btn-sm" ng-click="BearsCtrl.removeName(bear._id)"><span class="glyphicon glyphicon-remove
