@@ -1,16 +1,19 @@
-<h3> Bears</h3>
+<h3> Names</h3>
 
 <table class="table table-bordered table striped">
   <thead>
     <th>Name</th>
     <th>age</th>
     <th>ID</th>
+    <th>Remove</th>
   </thead>
   <tbody>
     <tr ng-repeat="bear in BearsCtrl.bears">
       <td>{{ bear.name }}</td>
       <td>{{ bear.age }}</td>
-      <td>{{ bear.id }} </td>
+      <td>{{ bear._id }} </td>
+      <td><button type="button" class="btn btn-default btn-sm" ng-click="BearsCtrl.removeName(bear._id)"><span class="glyphicon glyphicon-remove
+"></span></button></td>
     </tr>
   </tbody>
 </table>

@@ -1,10 +1,17 @@
 angular.module('app')
   .controller('createBearController', createBearController)
   
-function createBearController() {
+function createBearController($scope, $http) {
   var vm = this;
   
-  vm.createBear = function() {
-    console.log('create a bear')
+  $scope.formData = {}
+  
+  $scope.processForm = function() {
+  $http.post('/api/bears', {name: $scope.formData.name, age: $scope.formData.age }).success(function(res){
+    console.log('testing')
+  })
   }
+  
+  
+  
 }

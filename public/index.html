@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- 
+ <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
   <base href="/">
   
 </head>
@@ -16,19 +16,21 @@
 <body>
 <div>
   <a href="/">Home</a>
-  <a href="/Bears">show Bears</a>
-  <a href="/createBear">create Bear</a>
+  <a href="/Bears">show People</a>
+  <a href="/createBear">create Person</a>
   </div>
   
   <div ng-view></div>
   
-  <script src="/app/bower_components/angular/angular.js"></script>
-  <script src="/app/bower_components/angular-route/angular-route.js"></script>
-  <script src="/app/app.js"></script>
-  <script src="/app/routes.js"></script>
-  <script src="/app/home/home.ctrl.js"></script>
-  <script src="/app/Bears/Bears.ctrl.js"></script>
-  <script src="/app/createBear/createBear.ctrl.js"></script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-resource.js"></script>
+  <script src="./app.js"></script>
+  <script src="services/BearResource.js"></script>
+  <script src="./routes.js"></script>
+  <script src="./home/home.ctrl.js"></script>
+  <script src="./Bears/Bears.ctrl.js"></script>
+  <script src="./createBear/createBear.ctrl.js"></script>
   
   
 </body>

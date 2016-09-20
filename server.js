@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.use(express.static('client/app'));
+app.use(express.static('./public'));
 
 
 
@@ -48,7 +48,8 @@ router.route('/bears')
 .post(function (req, res) {
     var bear = new Bear(); // create a new instance of the bear model
     bear.name = req.body.name; //se the bears name (comes from the post request)
-
+    bear.age = req.body.age;
+  
     bear.save(function (err) {
         if (err)
             res.send(err);
